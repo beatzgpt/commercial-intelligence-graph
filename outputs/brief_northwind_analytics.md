@@ -11,7 +11,7 @@ Northwind Analytics (Retail Data Platforms, 1200 employees, UK) ranks 1 of 30 wi
 ## Suggested angle
 - Modernisation window: legacy stack (Batchline ETL, OldVault On-Prem Warehouse) alongside hiring and stated priority [SIG-0003, SIG-0005]. Position Aster Data Cloud as the migration path, not a rip-and-replace.
 - New data leader [SIG-0004]: leaders usually reset platform decisions in their first months. Offer a short evidence-based review.
-- Fresh funding [SIG-0001] means budget exists but pressure to show scale. Lead with time-to-value.
+- Recent funding [SIG-0001] may indicate investment capacity, not confirmed budget. Validate who owns the data platform budget and when it is allocated.
 - Active evaluation signal [SIG-0006]: ask what the pilot is meant to prove before it ends.
 
 ## Stakeholders

@@ -7,7 +7,7 @@
 3. **Graph** (`graph.py`): NetworkX `MultiDiGraph`. Node kinds: company, person, tech, signal. Edge relations: `works_at`, `uses`, `observed_at_company`, `mentions_tech`, `mentions_person`. Signal edges keep the `signal_id`.
 4. **Scoring** (`scoring.py`): per-signal points = `weight x confidence x 0.5^(age/half_life)`; structural points from graph facts. Each contribution keeps `signal_id`, `source_id`, `evidence_url`.
 5. **Queries** (`queries.py`): account profile, ranked opportunities, segment filter, 30-day digest.
-6. **Narrative** (`synthesis.py`): template rules by default. Optional single LLM call receives only the structured facts, must cite signal IDs, and is rejected if any cited ID is not in the profile.
+6. **Narrative** (`synthesis.py`): template rules by default. Optional single LLM call receives only the structured facts, must cite signal IDs, and is rejected if any cited ID is not in the profile or if it contains a number that does not appear in the input facts. It does not check that each claim is semantically supported by its cited signal (planned).
 7. **Outputs**: Jinja2 templates render Markdown and HTML briefs; Matplotlib draws the account graph and segment map.
 
 ## Design choices

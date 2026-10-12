@@ -111,6 +111,14 @@ def test_llm_mode_rejects_invented_citation_and_falls_back(env):
     assert n["mode"].startswith("template (LLM output rejected")
 
 
+def test_llm_mode_rejects_invented_figure(env):
+    _, conn, weights = env
+    p = account_profile(conn, config.HERO_COMPANY, weights)
+    bad = json.dumps({"summary": "Raised $400M [SIG-0001].", "angle": ["x"], "questions": ["a", "b", "c"]})
+    with pytest.raises(ValueError, match="Figures"):
+        narrative_llm(p, FakeClient(bad))
+
+
 def test_llm_requested_without_key_falls_back(env, monkeypatch):
     _, conn, weights = env
     monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)

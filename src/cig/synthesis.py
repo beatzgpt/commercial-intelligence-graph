@@ -1,9 +1,10 @@
 """Brief narrative. Two modes, described honestly:
 
 * template (default): deterministic rules over the scored facts. No model involved.
-* llm (optional, needs ANTHROPIC_API_KEY): ONE grounded model call that rewrites the narrative from
-  the same structured facts. It is a single call, not an autonomous agent. Output is validated:
-  any cited signal ID that is not in the profile makes us fall back to the template.
+* llm (optional, needs ANTHROPIC_API_KEY): ONE model call that rewrites the narrative from the same
+  structured facts. It is a single call, not an autonomous agent. Output is checked: any cited signal ID
+  not in the profile, or any figure not present in the input facts, falls back to the template.
+  Limit: it does not verify that each claim is semantically supported by its cited signal.
 """
 import json
 import os
@@ -17,6 +18,7 @@ from .config import SELLER_PRODUCT
 MODEL = os.environ.get("CIG_MODEL", "claude-sonnet-5-5")
 TEMPLATES = Path(__file__).parent / "templates"
 SIG_RE = re.compile(r"SIG-\d{4}")
+NUM_RE = re.compile(r"\d+(?:\.\d+)?")
 
 
 def _top_signals(profile, n=3):
@@ -47,8 +49,8 @@ def narrative_template(profile: dict) -> dict:
                            "platform decisions in their first months. Offer a short evidence-based review.")
         questions.append("What did the new data leader commit to in the first 90 days?")
     if by_type.get("funding"):
-        angle_parts.append(f"Fresh funding [{by_type['funding'][0]['signal_id']}] means budget exists "
-                           "but pressure to show scale. Lead with time-to-value.")
+        angle_parts.append(f"Recent funding [{by_type['funding'][0]['signal_id']}] may indicate investment capacity, "
+                           "not confirmed budget. Validate who owns the data platform budget and when it is allocated.")
     if by_type.get("tech_adoption"):
         angle_parts.append(f"Active evaluation signal [{by_type['tech_adoption'][0]['signal_id']}]: "
                            "ask what the pilot is meant to prove before it ends.")
@@ -74,12 +76,12 @@ def _facts_for_llm(profile: dict) -> dict:
 
 
 SYSTEM = ("You write concise account briefs for a B2B seller. Use ONLY the facts in the JSON the user "
-          "sends. Never invent facts, numbers or names. Cite supporting signals as [SIG-0000]. "
+          "sends. Never invent facts, numbers or names. Treat funding as a capacity signal, not proof of budget. Cite supporting signals as [SIG-0000]. "
           "Return JSON with keys: summary (string), angle (array of 1-4 short strings), questions (array of 3 strings).")
 
 
 def narrative_llm(profile: dict, client=None) -> dict:
-    """One grounded call. Raises ValueError if the output cannot be trusted."""
+    """One validated call. Raises ValueError if the output cannot be trusted."""
     if client is None:
         import anthropic  # optional dependency
         client = anthropic.Anthropic()
@@ -93,12 +95,17 @@ def narrative_llm(profile: dict, client=None) -> dict:
     known = {s["signal_id"] for s in profile["signals"]}
     cited = set(SIG_RE.findall(json.dumps(out)))
     if not cited or not cited <= known:
-        raise ValueError(f"Ungrounded citations: {sorted(cited - known) or 'none cited'}")
+        raise ValueError(f"Unknown citations: {sorted(cited - known) or 'none cited'}")
+    facts_text = SIG_RE.sub("", json.dumps(_facts_for_llm(profile)))
+    allowed = set(NUM_RE.findall(facts_text))
+    invented = sorted(set(NUM_RE.findall(SIG_RE.sub("", json.dumps(out)))) - allowed)
+    if invented:
+        raise ValueError(f"Figures not present in input facts: {invented}")
     if not all(k in out for k in ("summary", "angle", "questions")):
         raise ValueError("Missing keys in model output")
     if isinstance(out["angle"], str):
         out["angle"] = [out["angle"]]
-    out["mode"] = f"llm ({MODEL}), single grounded call, citations validated"
+    out["mode"] = f"llm ({MODEL}), single call, citations and figures validated"
     return out
 
 

@@ -4,10 +4,13 @@ A small, illustrative pipeline that turns scattered market signals into an **exp
 
 > **All data is synthetic.** Every company, person, number, source ID and URL is invented (evidence links point to `example.test`). Any resemblance to real entities is coincidental. This is a showcase of approach, not a production system, and it contains no client data, personal data, credentials or proprietary scoring logic.
 
+**See it without installing anything:** [example account brief](outputs/brief_northwind_analytics.md) | [architecture notes](docs/architecture.md) | [market map](outputs/map_retail_data_platforms.png) | [weekly digest](outputs/digest.md)
+
 ## Run it (about 60 seconds)
 
 ```bash
-git clone <this repo> && cd commercial-intelligence-graph
+git clone https://github.com/beatzgpt/commercial-intelligence-graph.git
+cd commercial-intelligence-graph
 python3 -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 cig demo          # no network, no API key
@@ -32,7 +35,7 @@ flowchart LR
     C --> E[Scoring<br/>scoring.yaml]
     D --> F[Queries<br/>profile, rank, digest]
     E --> F
-    F --> G[Narrative<br/>template or 1 grounded LLM call]
+    F --> G[Narrative<br/>template or 1 validated LLM call]
     G --> H[Outputs<br/>brief MD/HTML, graphs, digest]
 ```
 
@@ -63,7 +66,7 @@ Excerpt of the terminal run:
 |---|---|---|
 | Data generation, ingest, graph, scoring, ranking, digest | **Deterministic workflow** | Same seed and weights give byte-identical results |
 | Brief narrative, default | **Deterministic template** | Rules over scored facts, no model |
-| Brief narrative, `--llm` | **LLM-assisted synthesis (optional)** | One grounded call (needs `ANTHROPIC_API_KEY`, `pip install ".[llm]"`). Output is validated: any invented signal ID triggers a fallback to the template |
+| Brief narrative, `--llm` | **LLM-assisted synthesis (optional)** | One call (needs `ANTHROPIC_API_KEY`, `pip install ".[llm]"`). Output is checked: every cited signal ID must exist and every figure must appear in the input facts, otherwise it falls back to the template. It does not verify that each claim is semantically supported by the cited signal |
 | Autonomous research loop with tools and self-checking | **Not built** | Listed under Planned. Nothing here should be read as an "agent" |
 
 ## Technical capabilities and what they enable commercially
@@ -74,7 +77,7 @@ Excerpt of the terminal run:
 | Graph relationships (people, tech, signals) | Stakeholder and champion mapping before the first call |
 | Provenance on every signal | Evidence you can show a buyer or a sales manager |
 | Explainable, configurable scoring | Prioritisation and pipeline conversations you can defend and tune |
-| Grounded LLM synthesis with output validation | Pre-call prep in minutes without hallucinated facts |
+| LLM synthesis with citation and figure validation | Faster pre-call prep, with a guard against invented signal IDs and numbers |
 | Offline-first, seeded, tested | Safe to demo anywhere, results reproducible |
 
 ## Other use cases
@@ -91,7 +94,7 @@ Excerpt of the terminal run:
 | Seeded synthetic generator, SQLite ingest with provenance checks | Live public-API connectors |
 | Knowledge graph, 4 use cases, explainable scoring | Scheduled runs and alert delivery |
 | MD and HTML briefs, graph images, digest | CRM export |
-| Optional single LLM call with citation validation | Multi-step research agent with tool use and self-checks |
+| Optional single LLM call with citation and figure validation | Multi-step research agent with tool use and self-checks; semantic claim verification |
 | 11 tests, offline CLI | Graph database backend, cross-source entity resolution |
 
 ## Layout

@@ -125,7 +125,7 @@ def main(argv=None):
     s.set_defaults(fn=cmd_init)
     s = sub.add_parser("brief", help="account research brief for one company")
     s.add_argument("company")
-    s.add_argument("--llm", action="store_true", help="optional single grounded model call")
+    s.add_argument("--llm", action="store_true", help="optional single validated model call")
     s.set_defaults(fn=cmd_brief)
     s = sub.add_parser("opportunities", help="ranked, explainable opportunity list")
     s.add_argument("--top", type=int, default=10)
