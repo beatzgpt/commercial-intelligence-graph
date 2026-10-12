@@ -1,0 +1,11 @@
+tech_id,name,category,generation
+T01,OldVault On-Prem Warehouse,Data Warehouse,legacy
+T02,Batchline ETL,ETL / Orchestration,legacy
+T03,Gridlock Reporting Suite,BI,legacy
+T04,Cirrus Lakehouse,Data Platform,modern
+T05,Rivulet Streaming,Streaming,modern
+T06,Vectrix Vector Store,Vector Database,modern
+T07,Prism BI Studio,BI,modern
+T08,Tracelight Observability,Observability,modern
+T09,Featherbed Feature Store,ML Platform,modern
+T10,Beacon CDP,Customer Data Platform,modern

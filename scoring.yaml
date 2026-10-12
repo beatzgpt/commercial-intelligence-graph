@@ -1,0 +1,17 @@
+# Opportunity scoring weights. Every point in a score traces back to one line here.
+# Signal points  = weight * confidence * recency, recency = 0.5 ** (age_days / half_life)
+# Structural points = weight (no decay), awarded from the graph, not from signals.
+recency_half_life_days: 60
+
+signals:
+  funding: 20
+  exec_change: 18
+  hiring: 12
+  earnings_mention: 10
+  tech_adoption: 10
+
+structural:
+  legacy_tech_present: 15        # at least one legacy data technology in the footprint
+  champion_mapped: 8             # a likely internal champion exists in the graph
+  economic_buyer_mapped: 6       # a budget owner exists in the graph
+  security_blocker_identified: -5  # a security/procurement gatekeeper adds friction

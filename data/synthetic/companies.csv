@@ -1,0 +1,31 @@
+company_id,name,segment,region,employees,revenue_band
+C001,Northwind Analytics,Retail Data Platforms,UK,1200,$200M-$500M
+C002,Fennmoor Merchant Metrics,Retail Data Platforms,Nordics,150,$50M-$200M
+C003,Solacewick Ledger Intelligence,FinServ Analytics,France,900,$200M-$500M
+C004,Granitewell Freight Cloud,Logistics Cloud,DACH,900,$20M-$50M
+C005,Thornbury Health Data,Health Data Systems,France,150,$200M-$500M
+C006,Silverlode Media Metrics,Media Measurement,Benelux,900,$20M-$50M
+C007,Vantora Merchant Metrics,Retail Data Platforms,France,6000,$20M-$50M
+C008,Emberwick Risk Systems,FinServ Analytics,UK,6000,$200M-$500M
+C009,Marlowe Park Fleet Data,Logistics Cloud,Benelux,900,$50M-$200M
+C010,Helixor Clinical Systems,Health Data Systems,UK,150,$50M-$200M
+C011,Brightmere Media Metrics,Media Measurement,UK,400,$20M-$50M
+C012,Tidewater Row Commerce Data,Retail Data Platforms,Nordics,2500,$200M-$500M
+C013,Ashgrove Capital Analytics,FinServ Analytics,Nordics,900,$50M-$200M
+C014,Oakhaven Fleet Data,Logistics Cloud,Nordics,150,$50M-$200M
+C015,Elmcastle Clinical Systems,Health Data Systems,Iberia,400,$50M-$200M
+C016,Kestrelton Media Metrics,Media Measurement,France,900,$50M-$200M
+C017,Cinderhall Merchant Metrics,Retail Data Platforms,Nordics,150,$50M-$200M
+C018,Harborline Capital Analytics,FinServ Analytics,Nordics,2500,$200M-$500M
+C019,Pinecrest Row Freight Cloud,Logistics Cloud,DACH,6000,$200M-$500M
+C020,Cobaltgate Health Data,Health Data Systems,Iberia,2500,$500M+
+C021,Alderbrook Reach Analytics,Media Measurement,France,400,$200M-$500M
+C022,Dunmere Retail Analytics,Retail Data Platforms,DACH,6000,$200M-$500M
+C023,Quillstone Ledger Intelligence,FinServ Analytics,Benelux,2500,$500M+
+C024,Birchmoor Route Systems,Logistics Cloud,DACH,400,$500M+
+C025,Sablewood Health Data,Health Data Systems,UK,150,$50M-$200M
+C026,Orchidale Reach Analytics,Media Measurement,DACH,2500,$20M-$50M
+C027,Wrenfield Commerce Data,Retail Data Platforms,France,6000,$500M+
+C028,Lumenfield Ledger Intelligence,FinServ Analytics,Nordics,6000,$20M-$50M
+C029,Junipera Fleet Data,Logistics Cloud,Iberia,150,$200M-$500M
+C030,Redfern Gate Clinical Systems,Health Data Systems,Nordics,150,$200M-$500M

@@ -1,0 +1,78 @@
+person_id,name,title,company_id,role_type
+P001,Priya Ashdown,Chief Data Officer,C001,economic_buyer
+P002,Hugo Farrow,Head of Data Platform,C001,champion
+P003,Wen Castellan,Principal Data Engineer,C001,technical_evaluator
+P004,Owen Whitlock,Head of Information Security,C001,security_blocker
+P005,Sana Bellamy,Chief Information Officer,C002,economic_buyer
+P006,Jonas Tolliver,Head of Data Platform,C002,champion
+P007,Uma Galbraith,Staff Platform Architect,C002,technical_evaluator
+P008,Elena Oakley,Chief Data Officer,C003,economic_buyer
+P009,Viktor Tolliver,Head of Data Platform,C003,champion
+P010,Amara Galbraith,VP Data & Analytics,C004,economic_buyer
+P011,Kofi Kerrigan,Head of Data Platform,C004,champion
+P012,Ines Vance,Head of Information Security,C004,security_blocker
+P013,Theo Ellery,Chief Information Officer,C005,economic_buyer
+P014,Elena Hartwell,Director of Analytics Engineering,C005,champion
+P015,Zane Quarles,Chief Data Officer,C006,economic_buyer
+P016,Viktor Jessop,Director of Analytics Engineering,C006,champion
+P017,Sana Tolliver,VP Data & Analytics,C007,economic_buyer
+P018,Dev Kerrigan,Head of Data Platform,C007,champion
+P019,Chloe Norcross,Head of Information Security,C007,security_blocker
+P020,Yara Kerrigan,Chief Data Officer,C008,economic_buyer
+P021,Chloe Zeller,Head of Data Platform,C008,champion
+P022,Chloe Dunmore,VP Data & Analytics,C009,economic_buyer
+P023,Chloe Tolliver,Head of Data Platform,C009,champion
+P024,Grace Underhill,Chief Data Officer,C010,economic_buyer
+P025,Yara Vance,Director of Analytics Engineering,C010,champion
+P026,Ines Sterne,Procurement Lead,C010,security_blocker
+P027,Dev Galbraith,Chief Information Officer,C011,economic_buyer
+P028,Rafa Oakley,Director of Analytics Engineering,C011,champion
+P029,Ben Zeller,Chief Information Officer,C012,economic_buyer
+P030,Dev Dunmore,Director of Analytics Engineering,C012,champion
+P031,Lena Galbraith,Head of Information Security,C012,security_blocker
+P032,Sana Hartwell,VP Data & Analytics,C013,economic_buyer
+P033,Farid Lowther,Director of Analytics Engineering,C013,champion
+P034,Chloe Rowntree,Chief Information Officer,C014,economic_buyer
+P035,Viktor Bellamy,Head of Data Platform,C014,champion
+P036,Farid Quarles,VP Data & Analytics,C015,economic_buyer
+P037,Theo Jessop,Director of Analytics Engineering,C015,champion
+P038,Farid Pemberton,Chief Data Officer,C016,economic_buyer
+P039,Nadia Lowther,Director of Analytics Engineering,C016,champion
+P040,Viktor Sterne,Chief Data Officer,C017,economic_buyer
+P041,Grace Mansfield,Head of Data Platform,C017,champion
+P042,Ben Vance,Head of Information Security,C017,security_blocker
+P043,Theo Tolliver,Chief Information Officer,C018,economic_buyer
+P044,Farid Dunmore,Head of Data Platform,C018,champion
+P045,Farid Ellery,Principal Data Engineer,C018,technical_evaluator
+P046,Nadia Galbraith,Chief Information Officer,C019,economic_buyer
+P047,Zane Dunmore,Head of Data Platform,C019,champion
+P048,Jonas Jessop,Chief Information Officer,C020,economic_buyer
+P049,Lena Kerrigan,Director of Analytics Engineering,C020,champion
+P050,Nadia Hartwell,Procurement Lead,C020,security_blocker
+P051,Chloe Bellamy,VP Data & Analytics,C021,economic_buyer
+P052,Zane Vance,Head of Data Platform,C021,champion
+P053,Chloe Underhill,Head of Information Security,C021,security_blocker
+P054,Mateo Ellery,Chief Data Officer,C022,economic_buyer
+P055,Mateo Mansfield,Head of Data Platform,C022,champion
+P056,Sana Underhill,Staff Platform Architect,C022,technical_evaluator
+P057,Viktor Mansfield,Chief Information Officer,C023,economic_buyer
+P058,Dev Hartwell,Director of Analytics Engineering,C023,champion
+P059,Dev Underhill,Chief Data Officer,C024,economic_buyer
+P060,Jonas Mansfield,Head of Data Platform,C024,champion
+P061,Theo Lowther,Chief Data Officer,C025,economic_buyer
+P062,Rafa Lowther,Head of Data Platform,C025,champion
+P063,Amara Norcross,Principal Data Engineer,C025,technical_evaluator
+P064,Rafa Underhill,Chief Data Officer,C026,economic_buyer
+P065,Dev Ellery,Head of Data Platform,C026,champion
+P066,Viktor Dunmore,Staff Platform Architect,C026,technical_evaluator
+P067,Rafa Hartwell,Chief Data Officer,C027,economic_buyer
+P068,Kofi Oakley,Head of Data Platform,C027,champion
+P069,Ines Galbraith,VP Data & Analytics,C028,economic_buyer
+P070,Viktor Quarles,Head of Data Platform,C028,champion
+P071,Ines Imber,Principal Data Engineer,C028,technical_evaluator
+P072,Farid Norcross,VP Data & Analytics,C029,economic_buyer
+P073,Ines Lowther,Head of Data Platform,C029,champion
+P074,Dev Pemberton,Principal Data Engineer,C029,technical_evaluator
+P075,Grace Rowntree,VP Data & Analytics,C030,economic_buyer
+P076,Ines Bellamy,Head of Data Platform,C030,champion
+P077,Nadia Norcross,Staff Platform Architect,C030,technical_evaluator

@@ -1,0 +1,11 @@
+ #  Company                           Segment                   Score  Top contributions
+ 1  Northwind Analytics               Retail Data Platforms     68.09  legacy_tech_present 15.0, funding 10.1, champion_mapped 8.0
+ 2  Dunmere Retail Analytics          Retail Data Platforms     46.52  legacy_tech_present 15.0, exec_change 12.29, champion_mapped 8.0
+ 3  Redfern Gate Clinical Systems     Health Data Systems       46.22  legacy_tech_present 15.0, exec_change 10.77, champion_mapped 8.0
+ 4  Kestrelton Media Metrics          Media Measurement         45.09  legacy_tech_present 15.0, funding 12.0, champion_mapped 8.0
+ 5  Wrenfield Commerce Data           Retail Data Platforms     42.71  legacy_tech_present 15.0, champion_mapped 8.0, exec_change 6.27
+ 6  Cobaltgate Health Data            Health Data Systems       42.55  legacy_tech_present 15.0, funding 13.06, champion_mapped 8.0
+ 7  Sablewood Health Data             Health Data Systems       41.15  legacy_tech_present 15.0, exec_change 12.15, champion_mapped 8.0
+ 8  Helixor Clinical Systems          Health Data Systems       38.62  legacy_tech_present 15.0, champion_mapped 8.0, hiring 6.61
+ 9  Ashgrove Capital Analytics        FinServ Analytics         37.48  legacy_tech_present 15.0, champion_mapped 8.0, exec_change 6.12
+10  Silverlode Media Metrics          Media Measurement         36.77  legacy_tech_present 15.0, champion_mapped 8.0, hiring 7.77

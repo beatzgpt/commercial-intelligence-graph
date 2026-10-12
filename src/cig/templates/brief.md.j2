@@ -1,0 +1,44 @@
+# Account brief: {{ p.company.name }}
+
+*Synthetic data. As of {{ p.as_of }}. Narrative mode: {{ n.mode }}.*
+
+**Segment:** {{ p.company.segment }} | **Region:** {{ p.company.region }} | **Employees:** {{ p.company.employees }} | **Revenue band:** {{ p.company.revenue_band }}
+**Opportunity score:** {{ p.score }} (rank {{ p.rank }} of {{ p.of }})
+
+## Why now
+{{ n.summary }}
+
+## Suggested angle
+{% for a in n.angle %}
+- {{ a }}
+{% endfor %}
+
+## Stakeholders
+| Name | Title | Role in the deal |
+|---|---|---|
+{% for x in p.people %}
+| {{ x.name }} | {{ x.title }} | {{ x.role_type.replace('_', ' ') }} |
+{% endfor %}
+
+## Technology footprint
+{% for t in p.tech %}
+- {{ t.name }} ({{ t.category }}, {{ t.generation }}, since {{ t.since[:4] }})
+{% endfor %}
+
+## Score breakdown (every point is traceable)
+| Contribution | Weight | Confidence | Recency | Points | Evidence |
+|---|---|---|---|---|---|
+{% for c in p.contributions %}
+| {{ c.label.replace('_', ' ') }}: {{ c.summary }} | {{ c.weight }} | {{ c.confidence }} | {{ c.recency }} | {{ c.points }} | {{ (c.signal_id ~ ' / ' ~ c.source_id) if c.signal_id else 'graph structure' }} |
+{% endfor %}
+| **Total** | | | | **{{ p.score }}** | |
+
+## Discovery questions
+{% for q in n.questions %}
+{{ loop.index }}. {{ q }}
+{% endfor %}
+
+## Evidence
+{% for s in p.signals %}
+- {{ s.signal_id }} | {{ s.observed_at }} | {{ s.type }} | source {{ s.source_type }} / {{ s.source_id }} | {{ s.evidence_url }}
+{% endfor %}
